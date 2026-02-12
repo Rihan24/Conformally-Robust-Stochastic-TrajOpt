@@ -6,9 +6,9 @@ import matplotlib.pyplot as plt
 from np2pth import get_system_wrapper, get_controller_wrapper, get_w_func_wrapper_from_checkpoint
 import importlib
 import sys
-sys.path.append('systems')
-sys.path.append('configs')
-sys.path.append('models')
+sys.path.append('../systems')
+sys.path.append('../configs')
+sys.path.append('../models')
 
 # Parameters
 a1 = 0.1
@@ -81,7 +81,7 @@ obs_radius = 1.2
 
 system = importlib.import_module('system_CAR')
 f, B, _, num_dim_x, num_dim_control = get_system_wrapper(system)
-w_func = get_w_func_wrapper_from_checkpoint(checkpoint_path='log_CAR_0.5_10_1/model_best.pth.tar', w_lb=0.5, task = "CAR")
+w_func = get_w_func_wrapper_from_checkpoint(checkpoint_path='../log_CAR_0.5_10_1/model_best.pth.tar', w_lb=0.5, task = "CAR")
 M = w_func(np.array([0, 0.4, 0, 0]))
 s=0.167
 for i in range(num_of_steps):

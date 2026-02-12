@@ -1,7 +1,7 @@
 import contextlib
 import numpy as np
 from scipy.stats import multivariate_normal
-params = np.load("CrazyflieNoise_params.npz")
+params = np.load("../Crazyflie Hardware/CrazyflieNoise_params.npz")
 mu_hat = params["mu_hat"]
 Sigma_hat = params["Sigma_hat"]
 

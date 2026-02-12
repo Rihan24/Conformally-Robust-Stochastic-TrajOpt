@@ -5,9 +5,9 @@ import matplotlib.pyplot as plt
 from np2pth import get_system_wrapper, get_controller_wrapper, get_w_func_wrapper_from_checkpoint
 import importlib
 import sys
-sys.path.append('systems')
-sys.path.append('configs')
-sys.path.append('models')
+sys.path.append('../systems')
+sys.path.append('../configs')
+sys.path.append('../models')
 
 
 def collision_percentage_GP(x_trajs: np.ndarray) -> float:
@@ -218,8 +218,8 @@ s = chi2.ppf(p, df=2)
 # GP_planning matlab data'
 gp_test = {
             
-            'GP4_for_GMM0.05'  , 
-            'GP3_for_U0.1'         
+            'GP-LQR Matlab/GP4_for_GMM0.05'  , 
+            'GP-LQR Matlab/GP3_for_U0.1'         
 }
 colors_gp= [ 
     dark_green,

@@ -11,9 +11,9 @@ import time
 
 import os
 import sys
-sys.path.append('systems')
-sys.path.append('configs')
-sys.path.append('models')
+sys.path.append('../systems')
+sys.path.append('../configs')
+sys.path.append('../models')
 import argparse
 
 def compute_lyapunov_modelling_error(x,xstar,ustar,w_func,controller, w_lb,w_ub,gamma,dt):
@@ -79,8 +79,8 @@ def generate_random_ustar(t, uref_min, uref_max, num_freqs=30):
 
 system = importlib.import_module('system_CAR')
 f, B, _, num_dim_x, num_dim_control = get_system_wrapper(system)
-controller = get_controller_wrapper('log_CAR_0.5_10_1/controller_best.pth.tar')      # 1<=CAR2<=2   0.1<=CAR3<=0.2 
-w_func = get_w_func_wrapper_from_checkpoint(checkpoint_path='log_CAR_0.5_10_1/model_best.pth.tar', w_lb=0.5, task = "CAR")
+controller = get_controller_wrapper('../log_CAR_0.5_10_1/controller_best.pth.tar')      # 1<=CAR2<=2   0.1<=CAR3<=0.2 
+w_func = get_w_func_wrapper_from_checkpoint(checkpoint_path='../log_CAR_0.5_10_1/model_best.pth.tar', w_lb=0.5, task = "CAR")
 w_lb=0.5
 w_ub=10
 gamma_CT=1
