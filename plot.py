@@ -65,7 +65,7 @@ if __name__ == '__main__':
 
     fig = plt.figure(figsize=(8.0, 5.0))
     if args.plot_type=='3D':
-        ax = fig.gca(projection='3d')
+        ax = plt.axes(projection='3d') #fig.gca(projection='3d') plt.axes(projection='3d')
     else:
         ax = fig.gca()
 
